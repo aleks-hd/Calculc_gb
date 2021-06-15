@@ -43,10 +43,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_2"
-        app:layout_constraintTop_toTopOf="@id/_1"
         app:layout_constraintEnd_toStartOf="@id/_3"
         app:layout_constraintStart_toEndOf="@id/_1"
-
+        app:layout_constraintTop_toTopOf="@id/_1"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -54,10 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_5"
-        app:layout_constraintTop_toBottonOf="@id/_2"
         app:layout_constraintEnd_toStartOf="@id/_6"
         app:layout_constraintStart_toEndOf="@id/_4"
         app:layout_constraintTop_toBottomOf="@id/_2"
+        app:layout_constraintTop_toBottonOf="@id/_2"
 
         />
 
@@ -66,20 +65,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_8"
-        app:layout_constraintTop_toBottonOf="@id/_5"
         app:layout_constraintEnd_toStartOf="@id/_9"
         app:layout_constraintStart_toEndOf="@id/_7"
-        app:layout_constraintTop_toBottomOf="@id/_5" />
+        app:layout_constraintTop_toBottomOf="@id/_5"
+        app:layout_constraintTop_toBottonOf="@id/_5" />
 
     <Button
         android:id="@+id/_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_3"
-        app:layout_constraintTop_toTopOf="@id/_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_2"
-
+        app:layout_constraintTop_toTopOf="@id/_2"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -107,11 +105,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/_plus"
         app:layout_constraintEnd_toStartOf="@id/_."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/_7"
-        />
+        app:layout_constraintTop_toBottomOf="@id/_7" />
 
     <Button
         android:id="@+id/_."
@@ -121,6 +118,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/_0"
         app:layout_constraintTop_toTopOf="@+id/_0" />
+
+    <Button
+        android:id="@+id/_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@id/_del"
+        app:layout_constraintEnd_toStartOf="@id/_minus"
+        app:layout_constraintHorizontal_bias="0.331"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/_plus"
+        app:layout_constraintTop_toTopOf="@+id/_plus"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/_del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="/"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/_proizv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_plus" />
+
+    <Button
+        android:id="@+id/_proizv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/_del"
+        app:layout_constraintTop_toTopOf="@+id/_del" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
