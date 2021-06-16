@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fone"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -12,6 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_1"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintBottom_toTopOf="@id/_4"
         app:layout_constraintEnd_toStartOf="@id/_2"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_4"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintBottom_toTopOf="@id/_7"
         app:layout_constraintEnd_toStartOf="@id/_5"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_7"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintBottom_toTopOf="@id/_0"
         app:layout_constraintEnd_toStartOf="@id/_8"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_2"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintEnd_toStartOf="@id/_3"
         app:layout_constraintStart_toEndOf="@id/_1"
         app:layout_constraintTop_toTopOf="@id/_1"
@@ -53,11 +66,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_5"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintEnd_toStartOf="@id/_6"
         app:layout_constraintStart_toEndOf="@id/_4"
         app:layout_constraintTop_toBottomOf="@id/_2"
-        app:layout_constraintTop_toBottonOf="@id/_2"
-
         />
 
     <Button
@@ -65,16 +79,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_8"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintEnd_toStartOf="@id/_9"
         app:layout_constraintStart_toEndOf="@id/_7"
         app:layout_constraintTop_toBottomOf="@id/_5"
-        app:layout_constraintTop_toBottonOf="@id/_5" />
+         />
 
     <Button
         android:id="@+id/_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_3"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_2"
         app:layout_constraintTop_toTopOf="@id/_2"
@@ -85,6 +105,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_6"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintBottom_toTopOf="@id/_9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_5"
@@ -95,16 +118,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_9"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintBottom_toTopOf="@id/_0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_8"
         app:layout_constraintTop_toBottomOf="@id/_6" />
+
 
     <Button
         android:id="@+id/_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintBottom_toTopOf="@id/_plus"
         app:layout_constraintEnd_toStartOf="@id/_."
         app:layout_constraintStart_toStartOf="parent"
@@ -115,49 +145,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="."
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/_0"
-        app:layout_constraintTop_toTopOf="@+id/_0" />
+        app:layout_constraintStart_toEndOf="@id/_0"
+        app:layout_constraintTop_toTopOf="@id/_0" />
 
     <Button
         android:id="@+id/_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/black_"
         android:text="+"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize"
+
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/_del"
         app:layout_constraintEnd_toStartOf="@id/_minus"
-        app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_0"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@id/_0"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/_minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/black_"
         android:text="-"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_plus"
-        app:layout_constraintTop_toTopOf="@+id/_plus"
+        app:layout_constraintTop_toTopOf="@id/_plus"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/_del"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/black_"
         android:text="/"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/_proizv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_plus" />
+        app:layout_constraintTop_toBottomOf="@id/_plus" />
 
     <Button
         android:id="@+id/_proizv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/black_"
         android:text="*"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/_del"
         app:layout_constraintTop_toTopOf="@+id/_del" />
