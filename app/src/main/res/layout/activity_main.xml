@@ -141,7 +141,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple"
-        android:text="0"
+        android:text="@string/_0"
         android:textColor="@color/black"
         android:textSize="@dimen/textSizeBtn"
 
@@ -157,7 +157,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple"
-        android:text="."
+        android:text="@string/tochka"
         android:textColor="@color/black"
         android:textSize="@dimen/textSizeBtn"
         app:layout_constraintEnd_toEndOf="@id/_9"
@@ -170,7 +170,7 @@
         android:id="@+id/_C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="C"
+        android:text="@string/c"
         app:layout_constraintBottom_toTopOf="@+id/_1"
         app:layout_constraintEnd_toStartOf="@id/_percent"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,16 +181,16 @@
         android:id="@+id/_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+/-"
+        android:text="@string/minusplus"
         app:layout_constraintEnd_toStartOf="@id/_sqrt"
-        app:layout_constraintStart_toEndOf="@+id/_C"
+        app:layout_constraintStart_toEndOf="@id/_C"
         app:layout_constraintTop_toTopOf="@id/_C" />
 
     <Button
         android:id="@+id/_sqrt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="\u221A"
+        android:text="@string/sqrt"
         app:layout_constraintEnd_toStartOf="@id/_generation"
         app:layout_constraintStart_toEndOf="@id/_percent"
         app:layout_constraintTop_toTopOf="@id/_percent" />
@@ -208,7 +208,7 @@
         android:id="@+id/_degree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="/"
+        android:text="@string/del"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_3"
         app:layout_constraintTop_toTopOf="@id/_3" />
@@ -217,7 +217,7 @@
         android:id="@+id/_subtraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
+        android:text="@string/subtraction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/_9"
         app:layout_constraintTop_toTopOf="@id/_9" />
@@ -226,20 +226,20 @@
         android:id="@+id/_addition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
+        android:text="@string/plus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/_6"
-        app:layout_constraintTop_toTopOf="@+id/_6" />
+        app:layout_constraintStart_toEndOf="@id/_6"
+        app:layout_constraintTop_toTopOf="@id/_6" />
 
     <Button
         android:id="@+id/_equalli"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="="
+        android:text="@string/equalli"
         app:layout_constraintEnd_toEndOf="@id/_subtraction"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="@+id/_subtraction"
-        app:layout_constraintTop_toTopOf="@+id/_."
+        app:layout_constraintTop_toTopOf="@id/_."
         app:layout_constraintVertical_chainStyle="packed" />
 
 

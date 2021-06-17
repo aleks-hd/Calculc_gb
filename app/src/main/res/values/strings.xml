@@ -9,4 +9,13 @@
     <string name="_3">3</string>
     <string name="_6">6</string>
     <string name="_9">9</string>
+    <string name="tochka">.</string>
+    <string name="_0">0</string>
+    <string name="c">C</string>
+    <string name="minusplus">+/-</string>
+    <string name="sqrt">√</string>
+    <string name="del">/</string>
+    <string name="subtraction">-</string>
+    <string name="plus">+</string>
+    <string name="equalli">=</string>
 </resources>
