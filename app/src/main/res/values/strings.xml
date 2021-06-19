@@ -18,4 +18,5 @@
     <string name="subtraction">-</string>
     <string name="plus">+</string>
     <string name="equalli">=</string>
+    <string name="enter_text">enter text</string>
 </resources>

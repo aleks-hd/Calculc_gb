@@ -10,15 +10,14 @@
     <EditText
         android:id="@+id/_result"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:textSize="30dp"
-        android:hint="enter text"
+        android:layout_height="@dimen/sizeEditText"
+        android:background="@android:color/transparent"
         android:gravity="right|center"
+        android:hint="@string/enter_text"
+        android:textSize="@dimen/textSizeEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/transparent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/_1"
