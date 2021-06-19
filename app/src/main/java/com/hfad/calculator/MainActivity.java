@@ -20,7 +20,12 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Calc calc;
     String numberSymbol = "";
+    //Эксперимент - запоминаем аргумент 1 и 2 и операцию
+    Double perem1, perem2;
+    String operation;
+    Double result;
     private final String keyCounters = "Counters";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,34 +143,67 @@ public class MainActivity extends AppCompatActivity {
                     editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._tchk:
-                    numberSymbol += calc.getbtnTchk();
-                    editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    if (numberSymbol.equals("")) {
+                    } else {
+                        numberSymbol += calc.getbtnTchk();
+                        editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    }
                     break;
                 case R.id._addition:
-                    numberSymbol += calc.getBtnAddition();
+
+                    perem1 = Double.parseDouble(numberSymbol);
+                    operation = "+";
+                    numberSymbol = "";
                     editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._generation:
-                    numberSymbol += calc.getBtnGneration();
-                    editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    perem1 = Double.parseDouble(numberSymbol);
+                    operation = "*";
+                    numberSymbol = "";
+                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._subtraction:
-                    numberSymbol += calc.getBtnSubtraction();
-                    editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    perem1 = Double.parseDouble(numberSymbol);
+                    operation = "-";
+                    numberSymbol = "";
+                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._degree:
-                    numberSymbol += calc.getBtnDegree();
-                    editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    perem1 = Double.parseDouble(numberSymbol);
+                    operation = "/";
+                    numberSymbol = "";
+                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._percent:
-                    numberSymbol += calc.getBtnPercent();
-                    editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    perem1 = Double.parseDouble(numberSymbol);
+                    operation = "%";
+                    numberSymbol = "";
+                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._sqrt:
+                    perem1 = Double.parseDouble(numberSymbol);
+                    operation = "sqrt";
+                    numberSymbol = "";
                     Toast.makeText(MainActivity.this, "Пока не работает", Toast.LENGTH_SHORT);
                     break;
                 case R.id._equalli:
-                    Toast.makeText(MainActivity.this, "Пока не работает", Toast.LENGTH_SHORT);
+                    perem2 = Double.parseDouble(numberSymbol);
+                    //потом исправить(на свич), сейчас для проверки
+
+                    if (operation =="+")
+                    {result = perem1 + perem2;}
+                    else if (operation =="-")
+                    {result = perem1 - perem2;}
+                    else if (operation =="/")
+                    {result = perem1 + perem2;}
+                    else if (operation =="*")
+                    {result = perem1 * perem2;}
+                    else if (operation == "%")
+                    {result = (perem1/perem2)*100;}
+                    else {Toast.makeText(MainActivity.this, "Пока не доделал", Toast.LENGTH_SHORT);}
+                    editText.setText(String.format(Locale.getDefault(), "%s", result));
+                    numberSymbol = String.format(Locale.getDefault(), "%s", result);
+                    perem1 = result;
                     break;
                 case R.id._C:
                     numberSymbol = "";
