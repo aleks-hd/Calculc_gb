@@ -10,7 +10,7 @@
     <EditText
         android:id="@+id/_result"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/sizeEditText"
+        android:layout_height="@dimen/setSizeEditLand"
         android:background="@android:color/transparent"
         android:gravity="right|center"
         android:hint="@string/enter_text"
