@@ -5,4 +5,5 @@
     <dimen name="sizeEditText">150dp</dimen>
     <dimen name="textSizeEditText">30sp</dimen>
     <dimen name="setSizeEditLand">100dp</dimen>
+    <dimen name="Osize">0dp</dimen>
 </resources>
