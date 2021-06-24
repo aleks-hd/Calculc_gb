@@ -3,10 +3,12 @@ package com.hfad.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -24,7 +26,17 @@ public class MainActivity extends AppCompatActivity {
     Double perem1, perem2;
     String operation;
     Double result;
+    RadioButton radioButton_0;
+    RadioButton radioButton_1;
+    RadioButton radioButton_2;
     private final String keyCounters = "Counters";
+    //Имя настроек
+    private static final String NameSharedPrefer = "LOGINYS";
+    private static final String appTheme = "APP_THEME";
+    //name thema's
+    private static final int MyStyleLife = 0;
+    private static final int MyThemeLight = 1;
+    private static final int MyThemeDark = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +44,54 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         calc = new Calc();
         innitBtnEdit();
+        initTheme();
+    }
 
+    private void initTheme() {
+        initButton(findViewById(R.id.radioDark), MyThemeDark);
+        initButton(findViewById(R.id.radioLight), MyThemeLight);
+        initButton(findViewById(R.id.radioRedYellow), MyStyleLife);
+
+    }
+
+    private void initButton(View btn, final int codeStyle) {
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setAppTheme(codeStyle);
+                //restart activity
+                recreate();
+            }
+        });
+    }
+
+    private int getAppTheme(int codeStyle) {
+        return codeStyleId(getCodeStyle(codeStyle));
+    }
+
+    private int getCodeStyle(int codeStyle) {
+        //read config
+        SharedPreferences sharPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
+        return sharPref.getInt(appTheme, codeStyle);
+    }
+
+    //save config
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(appTheme, codeStyle);
+        editor.apply();
+    }
+
+    private int codeStyleId(int codeStyle) {
+        switch (codeStyle) {
+            case MyThemeLight:
+                return R.style.AppThemeLight;
+            case MyThemeDark:
+                return R.style.AppThemeDark;
+            default:
+                return R.style.AppTheme;
+        }
     }
 
     @Override
@@ -190,17 +249,19 @@ public class MainActivity extends AppCompatActivity {
                     perem2 = Double.parseDouble(numberSymbol);
                     //потом исправить(на свич), сейчас для проверки
 
-                    if (operation =="+")
-                    {result = perem1 + perem2;}
-                    else if (operation =="-")
-                    {result = perem1 - perem2;}
-                    else if (operation =="/")
-                    {result = perem1 + perem2;}
-                    else if (operation =="*")
-                    {result = perem1 * perem2;}
-                    else if (operation == "%")
-                    {result = (perem1/perem2)*100;}
-                    else {Toast.makeText(MainActivity.this, "Пока не доделал", Toast.LENGTH_SHORT);}
+                    if (operation == "+") {
+                        result = perem1 + perem2;
+                    } else if (operation == "-") {
+                        result = perem1 - perem2;
+                    } else if (operation == "/") {
+                        result = perem1 + perem2;
+                    } else if (operation == "*") {
+                        result = perem1 * perem2;
+                    } else if (operation == "%") {
+                        result = (perem1 / perem2) * 100;
+                    } else {
+                        Toast.makeText(MainActivity.this, "Пока не доделал", Toast.LENGTH_SHORT);
+                    }
                     editText.setText(String.format(Locale.getDefault(), "%s", result));
                     numberSymbol = String.format(Locale.getDefault(), "%s", result);
                     perem1 = result;

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/WhiteStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fone"
@@ -9,6 +10,7 @@
 
     <EditText
         android:id="@+id/_result"
+        style="@style/WhiteStyle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sizeEditText"
         android:background="@android:color/transparent"
@@ -144,7 +146,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/textSizeBtn"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/radio"
         app:layout_constraintEnd_toEndOf="@id/_8"
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="@id/_7"
@@ -240,6 +242,40 @@
         app:layout_constraintStart_toStartOf="@+id/_subtraction"
         app:layout_constraintTop_toTopOf="@id/_tchk"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioLight"
+            android:layout_width="@dimen/Osize"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Light"
+            style="@style/AppTheme"/>
+
+        <RadioButton
+            android:id="@+id/radioDark"
+            android:layout_width="@dimen/Osize"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RadioButton"
+            style="@style/AppTheme"/>
+
+        <RadioButton
+            android:id="@+id/radioRedYellow"
+            android:layout_width="@dimen/Osize"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RadioButton"
+            style="@style/AppTheme"/>
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

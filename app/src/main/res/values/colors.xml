@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black_">#992057F1</color>
     <color name="purple">#9964E4F8</color>
+
+    <color name="colorPrimary">#373737</color>
+    <color name="colorPrimaryDark">#992057F1</color>
+    <color name="colorAccent">#9964E4F8</color>
+
 </resources>
