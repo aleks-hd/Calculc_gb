@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="textSize">30sp</dimen>
+    <dimen name="textSize">20sp</dimen>
     <dimen name="textSizeBtn">14sp</dimen>
     <dimen name="sizeEditText">150dp</dimen>
     <dimen name="textSizeEditText">30sp</dimen>
     <dimen name="setSizeEditLand">100dp</dimen>
     <dimen name="Osize">0dp</dimen>
-
     <dimen name="margin">7dp</dimen>
 
 

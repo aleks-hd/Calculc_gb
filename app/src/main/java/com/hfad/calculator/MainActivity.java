@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private final String keyCounters = "Counters";
     //Имя настроек
     private static final String NameSharedPrefer = "LOGINYS";
-    private static final String appTheme = "APP_THEME";
+    private static final String AppTheme = "APP_THEME";
     //name thema's
     private static final int MyStyleLife = 0;
     private static final int MyThemeLight = 1;
@@ -45,12 +45,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getAppTheme(R.style.WhiteStyle));
         setContentView(R.layout.activity_main);
         calc = new Calc();
+        initTheme();
         innitBtnEdit();
 
-        setTheme(getAppTheme(R.style.AppThemeLight));
-        initTheme();
+
+
     }
 
     private void initTheme() {
@@ -58,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         initButton(findViewById(R.id.radioLight), MyThemeLight);
         initButton(findViewById(R.id.radioRedYellow), MyStyleLife);
 
-        RadioGroup rg = findViewById(R.id.radio);
-        ((MaterialRadioButton)rg.getChildAt(getCodeStyle(MyThemeDark))).setChecked(true);
+         RadioGroup rg = findViewById(R.id.radio);
+         ((MaterialRadioButton)rg.getChildAt(getCodeStyle(MyThemeLight))).setChecked(true);
 
     }
 
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("warning", codeStyle+"");
+                Log.e("warning", codeStyle + "");
                 setAppTheme(codeStyle);
 
                 //restart activity
@@ -83,14 +85,17 @@ public class MainActivity extends AppCompatActivity {
     private int getCodeStyle(int codeStyle) {
         //read config
         SharedPreferences sharPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
-        return sharPref.getInt(appTheme, codeStyle);
+        return sharPref.getInt(AppTheme, codeStyle);
     }
 
-    //save config
+    //Метод для сохранения настроев, с именем настроек NameSharedPrefer
     private void setAppTheme(int codeStyle) {
+        //Получаем файл настроек для активити,  передав имя общих настроек
         SharedPreferences sharedPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
+        //Чтобы сохранить настроки надо использовать Editor
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(appTheme, codeStyle);
+        //Сохраняем настройки
+        editor.putInt(AppTheme, codeStyle);
         editor.apply();
     }
 
@@ -104,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 return R.style.AppThemeDark;
             default:
 
-                return R.style.AppTheme;
+                return R.style.WhiteStyle;
         }
     }
 

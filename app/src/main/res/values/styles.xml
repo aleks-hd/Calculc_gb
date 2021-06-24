@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">#FFD600</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/holo_orange_light</item>
+        <item name="android:textColor">#0C9AF1</item>
+        <item name="colorOnPrimary">#F4E48F</item>
 
-        <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-            <item name="colorPrimary">@color/colorPrimary</item>
-            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-            <item name="colorAccent">@android:color/holo_orange_light</item>
-        </style>
+    </style>
 
-
-    <style name="WhiteStyle" parent="AppTheme">
-        <item name="android:textSize">@dimen/textSize</item>
+    <style name="WhiteStyle">
+        <item name="colorOnPrimary">#50E2F8</item>
         <item name="android:textColor">@android:color/holo_green_light</item>
-        <item name="android:layout_marginStart">@dimen/margin</item>
-        <item name="android:layout_marginEnd">@dimen/margin</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
-        <item name="android:fontFamily">cursive</item>
-        <item name="android:textStyle">italic</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 
-    <style name="AppThemeLight" parent="Theme.MaterialComponents.Light">
-        <item name="colorPrimary">#e91e63</item>
-        <item name="colorPrimaryDark">#b0003a</item>
-        <item name="colorAccent">#FFFFFF</item>
-        <item name="android:colorBackground">#F8E99E</item>
+    <style name="AppThemeLight">
+        <item name="colorOnPrimary">#EC67A3</item>
+        <item name="android:textColor">#0091EA</item>
+        <item name="colorAccent">#ADFF79</item>
     </style>
 
-    <style name="AppThemeDark" parent="Theme.MaterialComponents.DayNight">
-        <item name="colorPrimary">#595456</item>
-        <item name="colorPrimaryDark">#000000</item>
-        <item name="colorAccent">#2C1E23</item>
-
+    <style name="AppThemeDark">
+        <item name="colorOnPrimary">#C861FB</item>
+        <item name="android:textColor">#FF6D00</item>
+        <item name="colorAccent">#000000</item>
     </style>
 
 
