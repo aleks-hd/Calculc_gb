@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/WhiteStyle"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fone"
@@ -10,7 +10,7 @@
 
     <EditText
         android:id="@+id/_result"
-        style="@style/WhiteStyle"
+
         android:layout_width="match_parent"
         android:layout_height="@dimen/sizeEditText"
         android:background="@android:color/transparent"
@@ -265,7 +265,7 @@
             android:layout_width="@dimen/Osize"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton"
+            android:text="DarkNight"
             style="@style/AppTheme"/>
 
         <RadioButton
@@ -273,7 +273,7 @@
             android:layout_width="@dimen/Osize"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton"
+            android:text="RedYellow"
             style="@style/AppTheme"/>
     </RadioGroup>
 

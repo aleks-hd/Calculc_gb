@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
 import java.io.Serializable;
 import java.util.Locale;
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         calc = new Calc();
         innitBtnEdit();
+
+        setTheme(getAppTheme(R.style.AppThemeLight));
         initTheme();
     }
 
@@ -52,13 +58,18 @@ public class MainActivity extends AppCompatActivity {
         initButton(findViewById(R.id.radioLight), MyThemeLight);
         initButton(findViewById(R.id.radioRedYellow), MyStyleLife);
 
+        RadioGroup rg = findViewById(R.id.radio);
+        ((MaterialRadioButton)rg.getChildAt(getCodeStyle(MyThemeDark))).setChecked(true);
+
     }
 
     private void initButton(View btn, final int codeStyle) {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e("warning", codeStyle+"");
                 setAppTheme(codeStyle);
+
                 //restart activity
                 recreate();
             }
@@ -86,10 +97,13 @@ public class MainActivity extends AppCompatActivity {
     private int codeStyleId(int codeStyle) {
         switch (codeStyle) {
             case MyThemeLight:
+
                 return R.style.AppThemeLight;
             case MyThemeDark:
+
                 return R.style.AppThemeDark;
             default:
+
                 return R.style.AppTheme;
         }
     }
