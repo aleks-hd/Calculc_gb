@@ -16,17 +16,21 @@
         <item name="colorAccent">@color/white</item>
     </style>
 
-    <style name="AppThemeLight">
+    <style name="AppThemeLight" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorOnPrimary">#EC67A3</item>
         <item name="android:textColor">#0091EA</item>
         <item name="colorAccent">#ADFF79</item>
     </style>
 
-    <style name="AppThemeDark">
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.DayNight">
         <item name="colorOnPrimary">#C861FB</item>
         <item name="android:textColor">#FF6D00</item>
         <item name="colorAccent">#000000</item>
     </style>
 
-
+    <style name="RedYellow" parent="Theme.MaterialComponents.Light">
+        <item name="colorOnPrimary">#D50000</item>
+        <item name="android:textColor">#FFD704</item>
+        <item name="colorAccent">#FF0000</item>
+    </style>
 </resources>

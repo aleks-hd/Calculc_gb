@@ -20,4 +20,5 @@
     <string name="equalli">=</string>
     <string name="enter_text">enter text</string>
     <string name="generation">*</string>
+    <string name="nameBtnAction1">В калькулятор</string>
 </resources>

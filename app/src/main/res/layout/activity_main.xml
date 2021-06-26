@@ -123,7 +123,7 @@
         android:layout_height="wrap_content"
         android:text="@string/_0"
         android:textSize="@dimen/textSizeBtn"
-        app:layout_constraintBottom_toTopOf="@id/radio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/_8"
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="@id/_7"
@@ -218,37 +218,7 @@
         app:layout_constraintTop_toTopOf="@id/_tchk"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <RadioGroup
-        android:id="@+id/radio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <RadioButton
-            android:id="@+id/radioLight"
-            android:layout_width="@dimen/Osize"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Light" style="@style/WhiteStyle"/>
-
-        <RadioButton
-            android:id="@+id/radioDark"
-            android:layout_width="@dimen/Osize"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="DarkNight"
-        style="@style/WhiteStyle"/>
-
-        <RadioButton
-            android:id="@+id/radioRedYellow"
-            android:layout_width="@dimen/Osize"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="RedYellow" style="@style/WhiteStyle"/>
-    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

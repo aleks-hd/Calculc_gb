@@ -30,88 +30,19 @@ public class MainActivity extends AppCompatActivity {
     Double perem1, perem2;
     String operation;
     Double result;
-    RadioButton radioButton_0;
-    RadioButton radioButton_1;
-    RadioButton radioButton_2;
     private final String keyCounters = "Counters";
-    //Имя настроек
-    private static final String NameSharedPrefer = "LOGINYS";
-    private static final String AppTheme = "APP_THEME";
-    //name thema's
-    private static final int MyStyleLife = 0;
-    private static final int MyThemeLight = 1;
-    private static final int MyThemeDark = 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme(R.style.WhiteStyle));
+        //setTheme(getAppTheme(R.style.WhiteStyle));
         setContentView(R.layout.activity_main);
         calc = new Calc();
-        initTheme();
+        //initTheme();
         innitBtnEdit();
-
-
-
     }
 
-    private void initTheme() {
-        initButton(findViewById(R.id.radioDark), MyThemeDark);
-        initButton(findViewById(R.id.radioLight), MyThemeLight);
-        initButton(findViewById(R.id.radioRedYellow), MyStyleLife);
-
-         RadioGroup rg = findViewById(R.id.radio);
-         ((MaterialRadioButton)rg.getChildAt(getCodeStyle(MyThemeLight))).setChecked(true);
-
-    }
-
-    private void initButton(View btn, final int codeStyle) {
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.e("warning", codeStyle + "");
-                setAppTheme(codeStyle);
-
-                //restart activity
-                recreate();
-            }
-        });
-    }
-
-    private int getAppTheme(int codeStyle) {
-        return codeStyleId(getCodeStyle(codeStyle));
-    }
-
-    private int getCodeStyle(int codeStyle) {
-        //read config
-        SharedPreferences sharPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
-        return sharPref.getInt(AppTheme, codeStyle);
-    }
-
-    //Метод для сохранения настроев, с именем настроек NameSharedPrefer
-    private void setAppTheme(int codeStyle) {
-        //Получаем файл настроек для активити,  передав имя общих настроек
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
-        //Чтобы сохранить настроки надо использовать Editor
-        SharedPreferences.Editor editor = sharedPref.edit();
-        //Сохраняем настройки
-        editor.putInt(AppTheme, codeStyle);
-        editor.apply();
-    }
-
-    private int codeStyleId(int codeStyle) {
-        switch (codeStyle) {
-            case MyThemeLight:
-
-                return R.style.AppThemeLight;
-            case MyThemeDark:
-
-                return R.style.AppThemeDark;
-            default:
-
-                return R.style.WhiteStyle;
-        }
-    }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
