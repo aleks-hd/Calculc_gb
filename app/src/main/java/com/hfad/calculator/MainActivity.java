@@ -36,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setTheme(getAppTheme(R.style.WhiteStyle));
+        setTheme(getIntent().getExtras().getInt("NAME_THEME"));
+        Log.e("sdf", getIntent().getExtras().getInt("NAME_THEME")+"");
         setContentView(R.layout.activity_main);
         calc = new Calc();
-        //initTheme();
+        
         innitBtnEdit();
+
     }
 
 

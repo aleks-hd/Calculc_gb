@@ -21,6 +21,9 @@ public class OptionsActivity extends AppCompatActivity {
     private static final int MyThemeLight = 0;
     private static final int MyThemeDark = 1;
     private static final int MyStyleLife = 2;
+    int ass;
+    private static final String NAME_THEME ="NAME_THEME";
+    private Integer id_theme;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,7 @@ public class OptionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_options);
         initTheme();
         iniBtn();
+         ass= getAppTheme(id_theme);
     }
 
     private void iniBtn() {
@@ -36,6 +40,7 @@ public class OptionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(OptionsActivity.this, MainActivity.class);
+                intent.putExtra(NAME_THEME, ass);
                 startActivity(intent);
             }
         });
@@ -65,12 +70,14 @@ public class OptionsActivity extends AppCompatActivity {
     }
 
     private int getAppTheme(int codeStyle) {
+
         return codeStyleId(getCodeStyle(codeStyle));
     }
 
     private int getCodeStyle(int codeStyle) {
         //Читаем конфиг и возвращаем идентификатор сохраненой в конфиге стиля
         SharedPreferences sharPref = getSharedPreferences(NameSharedPrefer, MODE_PRIVATE);
+        id_theme = sharPref.getInt(AppTheme, codeStyle);
         return sharPref.getInt(AppTheme, codeStyle);
     }
 
@@ -88,16 +95,12 @@ public class OptionsActivity extends AppCompatActivity {
     private int codeStyleId(int codeStyle) {
         switch (codeStyle) {
             case MyThemeLight:
-
                 return R.style.Theme_Light;
             case MyThemeDark:
-
                 return R.style.Theme_Night;
             case MyStyleLife:
                 return R.style.Theme_RedYellow;
-
              default:
-
                 return R.style.AppTheme;
         }
     }
