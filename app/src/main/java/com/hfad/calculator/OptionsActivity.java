@@ -16,14 +16,19 @@ public class OptionsActivity extends AppCompatActivity {
     //Имя настроек
     private static final String NameSharedPrefer = "LOGINYS";
     private static final String AppTheme = "APP_THEME";
+
+    private static final int REQUEST_CODE_SET_THEME = 50;
+    private static final int REQUEST_CODE_HISTORY = 60;
+
     //name thema's
 
     private static final int MyThemeLight = 0;
     private static final int MyThemeDark = 1;
     private static final int MyStyleLife = 2;
     int ass;
-    private static final String NAME_THEME ="NAME_THEME";
+    private static final String NAME_THEME = "NAME_THEME";
     private Integer id_theme;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +36,7 @@ public class OptionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_options);
         initTheme();
         iniBtn();
-         ass= getAppTheme(id_theme);
+        ass = getAppTheme(id_theme);
     }
 
     private void iniBtn() {
@@ -41,10 +46,12 @@ public class OptionsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(OptionsActivity.this, MainActivity.class);
                 intent.putExtra(NAME_THEME, ass);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE_SET_THEME);
+                // startActivity(intent);
             }
         });
     }
+
     private void initTheme() {
 
         initButton(findViewById(R.id.radioLight), MyThemeLight);
@@ -52,7 +59,7 @@ public class OptionsActivity extends AppCompatActivity {
         initButton(findViewById(R.id.radioRedYellow), MyStyleLife);
 
         RadioGroup rg = findViewById(R.id.radio);
-       ((MaterialRadioButton)rg.getChildAt(getCodeStyle(MyThemeLight))).setChecked(true);
+        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(MyThemeLight))).setChecked(true);
 
     }
 
@@ -100,7 +107,7 @@ public class OptionsActivity extends AppCompatActivity {
                 return R.style.Theme_Night;
             case MyStyleLife:
                 return R.style.Theme_RedYellow;
-             default:
+            default:
                 return R.style.AppTheme;
         }
     }

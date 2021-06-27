@@ -3,6 +3,7 @@ package com.hfad.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,19 +38,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(getIntent().getExtras().getInt("NAME_THEME"));
-        Log.e("sdf", getIntent().getExtras().getInt("NAME_THEME")+"");
+        Log.e("sdf", getIntent().getExtras().getInt("NAME_THEME") + "");
         setContentView(R.layout.activity_main);
         calc = new Calc();
-        
         innitBtnEdit();
-
     }
 
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable(keyCounters, (Serializable) numberSymbol);
+        // outState.putSerializable(keyCounters, (Serializable) numberSymbol);
+        outState.putString(keyCounters, numberSymbol);
     }
 
     @Override
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(outState);
         numberSymbol = outState.getString(keyCounters);
         editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
-
     }
 
     private void innitBtnEdit() {
@@ -107,8 +106,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //метод добавления текста в editText
-
-
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -171,52 +168,44 @@ public class MainActivity extends AppCompatActivity {
                     perem1 = Double.parseDouble(numberSymbol);
                     operation = "*";
                     numberSymbol = "";
-                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._subtraction:
                     perem1 = Double.parseDouble(numberSymbol);
                     operation = "-";
                     numberSymbol = "";
-                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._degree:
                     perem1 = Double.parseDouble(numberSymbol);
                     operation = "/";
                     numberSymbol = "";
-                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
                     break;
                 case R.id._percent:
-                    perem1 = Double.parseDouble(numberSymbol);
-                    operation = "%";
-                    numberSymbol = "";
-                    //editText.setText(String.format(Locale.getDefault(), "%s", numberSymbol));
+                    /* Ошибка преобразования минуса из строки в тип Double, как обойти?
+                    perem1 =- Double.parseDouble(numberSymbol);
+                    editText.setText(String.format(Locale.getDefault(), "%s", perem1+""));
+                    operation = "otr";
+                    numberSymbol = "";*/
                     break;
                 case R.id._sqrt:
                     perem1 = Double.parseDouble(numberSymbol);
-                    operation = "sqrt";
-                    numberSymbol = "";
+                    result = Math.sqrt(perem1);
+                    obnovl(result);
                     Toast.makeText(MainActivity.this, "Пока не работает", Toast.LENGTH_SHORT);
                     break;
                 case R.id._equalli:
                     perem2 = Double.parseDouble(numberSymbol);
-                    //потом исправить(на свич), сейчас для проверки
-
                     if (operation == "+") {
                         result = perem1 + perem2;
                     } else if (operation == "-") {
                         result = perem1 - perem2;
                     } else if (operation == "/") {
-                        result = perem1 + perem2;
+                        result = perem1 / perem2;
                     } else if (operation == "*") {
                         result = perem1 * perem2;
-                    } else if (operation == "%") {
-                        result = (perem1 / perem2) * 100;
                     } else {
                         Toast.makeText(MainActivity.this, "Пока не доделал", Toast.LENGTH_SHORT);
                     }
-                    editText.setText(String.format(Locale.getDefault(), "%s", result));
-                    numberSymbol = String.format(Locale.getDefault(), "%s", result);
-                    perem1 = result;
+                    obnovl(result);
                     break;
                 case R.id._C:
                     numberSymbol = "";
@@ -226,9 +215,9 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    /*private void result(String a){
-         //Оталось самое сложное - преобразовать введеную строку в математическое выражение, как это сделать - не знаю, скорее всего цифры в Integer, а символы в char, и писать это в переменную типа double.
-         По нажатию на кнопку = сделать вычисление
-    }*/
-
+    private void obnovl(double res) {
+        editText.setText(String.format(Locale.getDefault(), "%s", res));
+        numberSymbol = String.format(Locale.getDefault(), "%s", res);
+        perem1 = res;
+    }
 }
